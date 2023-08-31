@@ -1,13 +1,11 @@
 # Orientações gerais
 
-## 1. SQL
+## 1. SQL (Modelo Físico)
 
-- Crie um banco de dados chamado `crud_escola_seunome`
-- Crie no **phpMyAdmin** uma tabela chamada alunos com os seguintes campos:
-    - `id (inteiro pequeno, não nulo, com chave primária e auto incrementado)`
-    - `nome (string com tamanho 30) não nulo`
-    - `primeira (decimal tamanho total 4, 2 dígitos depois da vírgula) não nulo`
-    - `segunda (decimal tamanho total 4, 2 dígitos depois da vírgula) não nulo`
+- No **phpMyAdmin** crie um banco de dados chamado `crud_escola_seunome`
+- Dentro dele, crie uma tabela chamada **alunos** de acordo com a modelagem lógica indicada:
+
+![Modelo Lógico do Exercício](modelo-logico.png)
 
 ## 2. PHP e SQL        
 
