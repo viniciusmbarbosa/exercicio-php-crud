@@ -18,10 +18,10 @@
 	    <input type="text" id="nome" required></p>
         
       <p><label for="primeira">Primeira nota:</label>
-	    <input type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+	    <input type="number" id="primeira" step="0.01" min="0.00" max="10.00" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <input type="number" id="segunda" step="0.01" min="0.00" max="10.00" required></p>
 	    
       <button>Cadastrar aluno</button>
 	</form>

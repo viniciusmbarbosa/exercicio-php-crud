@@ -19,10 +19,10 @@
 	    <input type="text" name="nome" id="nome" required></p>
         
         <p><label for="primeira">Primeira nota:</label>
-	    <input name="primeira" type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+	    <input name="primeira" type="number" id="primeira" step="0.01" min="0.00" max="10.00" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input name="segunda" type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <input name="segunda" type="number" id="segunda" step="0.01" min="0.00" max="10.00" required></p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
