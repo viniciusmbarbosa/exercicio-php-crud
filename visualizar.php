@@ -8,6 +8,8 @@
 </head>
 <body>
 <div class="container">
+
+
     <h1>Lista de alunos</h1>
     <hr>
     <p><a href="inserir.php">Inserir novo aluno</a></p>
