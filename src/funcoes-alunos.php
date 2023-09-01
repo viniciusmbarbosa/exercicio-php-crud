@@ -50,5 +50,10 @@ function inserirAlunos(
 }
 
 function atualizarAluno(PDO $conexao, string $nome, int $id): void {
-    $sql = "UPDATE alunos SET nome = :nome WHERE ID = :id";
+    $sql = "UPDATE alunos SET nome = :nome, primeiro = :primeiro, segundo = :segundo WHERE ID = :id";
+
+    try {
+        $consulta = $conexao->prepare($sql);
+
+    }
 }
