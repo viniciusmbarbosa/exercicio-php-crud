@@ -15,6 +15,7 @@ FROM alunos";
 try {
     $consulta = $conexao->prepare($sql);
     $consulta->execute();
+                                          //trás array associativo      
     $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
 } catch (Exception $erro) {
     die("Erro ao carregar Aluno:".$erro->getMessage());
@@ -49,11 +50,32 @@ function inserirAlunos(
     }
 }
 
-function atualizarAluno(PDO $conexao, string $nome, int $id): void {
-    $sql = "UPDATE alunos SET nome = :nome, primeiro = :primeiro, segundo = :segundo WHERE ID = :id";
+function lerUmAluno(PDO $conexao, int $id){
+    $sql = "SELECT * FROM  alunos where id = :id";
+    try {
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindValue(":id", $id, PDO::PARAM_INT);
+        $consulta->execute();
+        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+
+    } catch (Exception $erro) {
+        die("Erro ao carregar dados:".$erro->getMessage());
+        
+    }
+    return $resultado;
+};
+
+ function atualizarAluno(PDO $conexao, string $nome, float $primeiro, float $segunda, int $id): void {
+    $sql = "UPDATE alunos SET nome = :nome, primeiro = :primeiro, segunda = :segunda WHERE ID = :id";
 
     try {
         $consulta = $conexao->prepare($sql);
-
+        $consulta->bindValue(":nome", $nome, PDO::PARAM_STR);
+        $consulta->bindValue(":primeiro", $primeiro, PDO::PARAM_INT);
+        $consulta->bindValue(":segunda", $segunda, PDO::PARAM_INT);
+        $consulta->bindValue(":id", $id, PDO::PARAM_INT);
+        $consulta->execute();
+    }catch(Exception $erro){
+        die("Erro ao atualizar: ".$erro->getMessage());
     }
 }

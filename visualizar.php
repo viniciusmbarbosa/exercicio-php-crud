@@ -18,9 +18,11 @@ $listaDeAlunos = selectAluno($conexao);
     <h1>Lista de alunos</h1>
     <hr>
     <p><a href="inserir.php">Inserir novo aluno</a></p>
-    
     <?php
     foreach($listaDeAlunos as $alunos){?>
+
+    
+    
     <article>
         <p>
             Nome do Aluno: <?=$alunos['nome']?>
@@ -33,6 +35,8 @@ $listaDeAlunos = selectAluno($conexao);
             Segunda nota: <?=$alunos['segunda']?>
         </p>
         </article>
+        
+    <p><a href="atualizar.php?id=<?=$alunos["id"]?>">Atualizar dados aluno</a></p>
   <?php }  ?>
   
 
