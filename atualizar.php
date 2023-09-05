@@ -45,7 +45,7 @@ if (isset($_POST['atualizar-dados'])) {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container ">
         <h1>Atualizar dados do aluno </h1>
         <hr>
 

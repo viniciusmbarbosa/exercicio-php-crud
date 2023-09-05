@@ -20,13 +20,14 @@ $listaDeAlunos = selectAluno($conexao);
     <h1>Lista de alunos</h1>
     <hr>
     <p><a class="btn btn-primary" href="inserir.php">Inserir novo aluno</a></p>
+    <div class="row">
     <?php
     foreach($listaDeAlunos as $alunos){?>
 
     
     
-    <div class="row">
-        <article class="col">
+   
+        <article class="w-50 mt-3 ">
         
                 <p>
                     Nome do Aluno: <?=$alunos['nome']?>
@@ -44,14 +45,14 @@ $listaDeAlunos = selectAluno($conexao);
                 </p>
         
         
-            </article>
+            
         
         <p><a class="btn btn-primary" href="atualizar.php?id=<?=$alunos["id"]?>">Atualizar dados aluno</a></p>
         <p><a class="btn btn-danger" href="excluir.php?id=<?=$alunos["id"]?>">Excluir Aluno</a></p>
         
-    </div>
+        </article>
   <?php }  ?>
-        
+  </div>    
   
 
     <p><a class="btn btn-secondary" href="index.php">Voltar ao início</a></p>
