@@ -1,5 +1,6 @@
 <?php
 require_once "./src/funcoes-alunos.php";
+require_once "./src/ultilidades-func.php";
 $listaDeAlunos = selectAluno($conexao);
 
 ?>
@@ -33,6 +34,9 @@ $listaDeAlunos = selectAluno($conexao);
         </p>
         <p>
             Segunda nota: <?=$alunos['segunda']?>
+        </p>
+        <p>
+            <?=resultado(resultadoMedia($alunos['primeiro'], $alunos['segunda']))?>
         </p>
         </article>
         
