@@ -40,6 +40,7 @@ if (isset($_POST['atualizar-dados'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Atualizar dados - Exercício CRUD com PHP e MySQL</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -50,18 +51,18 @@ if (isset($_POST['atualizar-dados'])) {
 
         <p>Utilize o formulário abaixo para atualizar os dados do aluno.</p>
 
-        <form action="#" method="post">
+        <form class="col-3" action="#" method="post">
 
             <p><label for="nome">Nome:</label>
-                <input value="<?=$aluno['nome']?>" type="text" name="nome" id="nome" required>
+                <input  class="form-control" value="<?=$aluno['nome']?>" type="text" name="nome" id="nome" required>
             </p>
 
             <p><label for="primeira">Primeira nota:</label>
-                <input value="<?=$aluno['primeiro']?>" name="primeiro" type="number" id="primeira" step="0.01" min="0.00" max="10.00" required>
+                <input class="form-control" value="<?=$aluno['primeiro']?>" name="primeiro" type="number" id="primeira" step="0.01" min="0.00" max="10.00" required>
             </p>
 
             <p><label for="segunda">Segunda nota:</label>
-                <input value="<?=$aluno['segunda']?>" name="segunda" type="number" id="segunda" step="0.01" min="0.00" max="10.00" required>
+                <input class="form-control" value="<?=$aluno['segunda']?>" name="segunda" type="number" id="segunda" step="0.01" min="0.00" max="10.00" required>
             </p>
 
 
@@ -70,21 +71,21 @@ if (isset($_POST['atualizar-dados'])) {
                 <!-- Campo somente leitura e desabilitado para edição.
         Usado apenas para exibição do valor da média -->
                 <label for="media">Média:</label>
-                <input value="<?=resultadoMedia($aluno['primeiro'], $aluno['segunda'])?>" name="media" type="number" id="media" step="0.01" min="0.00" max="10.00" readonly disabled>
+                <input class="form-control" value="<?=resultadoMedia($aluno['primeiro'], $aluno['segunda'])?>" name="media" type="number" id="media" step="0.01" min="0.00" max="10.00" readonly disabled>
             </p>
 
             <p>
                 <!-- Campo somente leitura e desabilitado para edição 
         Usado apenas para exibição do texto da situação -->
                 <label for="situacao">Situação:</label>
-                <input value="<?=resultado(resultadoMedia($aluno['primeiro'], $aluno['segunda'])) ?>" type="text" name="situacao" id="situacao" readonly disabled>
+                <input class="form-control" value="<?=resultado(resultadoMedia($aluno['primeiro'], $aluno['segunda'])) ?>" type="text" name="situacao" id="situacao" readonly disabled>
             </p>
 
-            <button type="submit" name="atualizar-dados">Atualizar dados do aluno</button>
+            <button class="btn btn-primary" type="submit" name="atualizar-dados">Atualizar dados do aluno</button>
         </form>
 
         <hr>
-        <p><a href="visualizar.php">Voltar à lista de alunos</a></p>
+        <p><a class="btn btn-secondary" href="visualizar.php">Voltar à lista de alunos</a></p>
 
     </div>
 

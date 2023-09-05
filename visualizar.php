@@ -9,6 +9,7 @@ $listaDeAlunos = selectAluno($conexao);
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
 <link href="css/style.css" rel="stylesheet">
 </head>
@@ -18,39 +19,42 @@ $listaDeAlunos = selectAluno($conexao);
 
     <h1>Lista de alunos</h1>
     <hr>
-    <p><a href="inserir.php">Inserir novo aluno</a></p>
+    <p><a class="btn btn-primary" href="inserir.php">Inserir novo aluno</a></p>
     <?php
     foreach($listaDeAlunos as $alunos){?>
 
     
     
-    <article>
-        <p>
-            Nome do Aluno: <?=$alunos['nome']?>
-        </p>
-    
-        <p>
-            Primeira nota: <?=$alunos['primeiro']?>
-        </p>
-        <p>
-            Segunda nota: <?=$alunos['segunda']?>
-        </p>
+    <div class="row">
+        <article class="col">
         
-        <p>Média: <?= resultadoMedia($alunos['primeiro'], $alunos['segunda'] )?></p>
-        <p>
-            Resultado: <?=resultado(resultadoMedia($alunos['primeiro'], $alunos['segunda']))?>
-        </p>
-
+                <p>
+                    Nome do Aluno: <?=$alunos['nome']?>
+                </p>
+                <p class="">
+                    Primeira nota: <?=$alunos['primeiro']?>
+                </p>
+                <p>
+                    Segunda nota: <?=$alunos['segunda']?>
+                </p>
         
-        </article>
+                <p>Média: <?= resultadoMedia($alunos['primeiro'], $alunos['segunda'] )?></p>
+                <p>
+                    Resultado: <?=resultado(resultadoMedia($alunos['primeiro'], $alunos['segunda']))?>
+                </p>
         
-    <p><a href="atualizar.php?id=<?=$alunos["id"]?>">Atualizar dados aluno</a></p>
-    <p><a href="excluir.php?id=<?=$alunos["id"]?>">Excluir Aluno</a></p>
+        
+            </article>
+        
+        <p><a class="btn btn-primary" href="atualizar.php?id=<?=$alunos["id"]?>">Atualizar dados aluno</a></p>
+        <p><a class="btn btn-danger" href="excluir.php?id=<?=$alunos["id"]?>">Excluir Aluno</a></p>
+        
+    </div>
   <?php }  ?>
         
   
 
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><a class="btn btn-secondary" href="index.php">Voltar ao início</a></p>
 </div>
 
 </body>

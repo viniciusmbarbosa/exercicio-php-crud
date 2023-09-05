@@ -25,6 +25,8 @@ if (isset($_POST['inserir'])){
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">b
+
 <title>Cadastrar um novo aluno - Exercício CRUD com PHP e MySQL</title>
 <link href="css/style.css" rel="stylesheet">
 </head>
@@ -35,8 +37,8 @@ if (isset($_POST['inserir'])){
     		
     <p>Utilize o formulário abaixo para cadastrar um novo aluno.</p>
 
-	<form action="#" method="post">
-	    <p><label for="nome">Nome:</label>
+	<form class="mb-3" action="#" method="post">
+	    <p><label class="form-labe" for="nome">Nome:</label>
 	    <input name="nome" type="text" id="nome" required></p>
         
       <p><label for="primeira">Primeira nota:</label>
@@ -49,7 +51,7 @@ if (isset($_POST['inserir'])){
 	</form>
 
     <hr>
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><a class="btn btn-secondary" href="index.php">Voltar ao início</a></p>
 </div>
 
 </body>
