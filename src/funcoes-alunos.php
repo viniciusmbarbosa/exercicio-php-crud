@@ -8,8 +8,7 @@ $sql = "SELECT
 id,
 nome,
 primeiro,
-segunda,
-(primeiro + segunda) / 2 as media
+segunda
 FROM alunos";
 
 try {

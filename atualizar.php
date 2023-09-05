@@ -1,5 +1,6 @@
 <?php
 require_once "src/funcoes-alunos.php";
+require_once "src/ultilidades-func.php";
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 
@@ -63,18 +64,20 @@ if (isset($_POST['atualizar-dados'])) {
                 <input value="<?=$aluno['segunda']?>" name="segunda" type="number" id="segunda" step="0.01" min="0.00" max="10.00" required>
             </p>
 
+
+
             <p>
                 <!-- Campo somente leitura e desabilitado para edição.
         Usado apenas para exibição do valor da média -->
                 <label for="media">Média:</label>
-                <input name="media" type="number" id="media" step="0.01" min="0.00" max="10.00" readonly disabled>
+                <input value="<?=resultadoMedia($aluno['primeiro'], $aluno['segunda'])?>" name="media" type="number" id="media" step="0.01" min="0.00" max="10.00" readonly disabled>
             </p>
 
             <p>
                 <!-- Campo somente leitura e desabilitado para edição 
         Usado apenas para exibição do texto da situação -->
                 <label for="situacao">Situação:</label>
-                <input type="text" name="situacao" id="situacao" readonly disabled>
+                <input value="<?=resultado(resultadoMedia($aluno['primeiro'], $aluno['segunda'])) ?>" type="text" name="situacao" id="situacao" readonly disabled>
             </p>
 
             <button type="submit" name="atualizar-dados">Atualizar dados do aluno</button>

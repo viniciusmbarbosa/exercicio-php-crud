@@ -35,13 +35,19 @@ $listaDeAlunos = selectAluno($conexao);
         <p>
             Segunda nota: <?=$alunos['segunda']?>
         </p>
+        
+        <p>Média: <?= resultadoMedia($alunos['primeiro'], $alunos['segunda'] )?></p>
         <p>
-            <?=resultado(resultadoMedia($alunos['primeiro'], $alunos['segunda']))?>
+            Resultado: <?=resultado(resultadoMedia($alunos['primeiro'], $alunos['segunda']))?>
         </p>
+
+        
         </article>
         
     <p><a href="atualizar.php?id=<?=$alunos["id"]?>">Atualizar dados aluno</a></p>
+    <p><a href="excluir.php?id=<?=$alunos["id"]?>">Excluir Aluno</a></p>
   <?php }  ?>
+        
   
 
     <p><a href="index.php">Voltar ao início</a></p>
