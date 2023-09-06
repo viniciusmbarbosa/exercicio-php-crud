@@ -89,6 +89,7 @@ if (isset($_POST['atualizar-dados'])) {
 
     </div>
 
+    <script src="js/atualiza-campos.js"></script>
 
 </body>
 
